@@ -1,0 +1,49 @@
+<div class="container"
+     fxLayout="row wrap"
+     fxLayout.sm="column"
+     fxLayout.xs="column"
+     fxLayoutAlign.gt-md="space-around center"
+     fxLayoutGap="10px">
+
+<mat-card *ngFor="let dish of dishs" fxFlex=40>
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>
+      <h3><b>{{dish.name | uppercase}}</b></h3>
+    </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src   dish.image}} alt={{dish.name}} height="400px">
+  <mat-card-content>
+    <p>{{dish.description}}
+    </p>
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngFor="let promotion of promotions" fxFlex=40>
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>
+      <h3><b>{{promotion.name | uppercase}}</b></h3>
+    </mat-card-title>
+  </mat-card-header>
+  <img mat-card-image src={{promotion.image}} alt={{promotion.name}} height="400px">
+  <mat-card-content>
+    <p>{{promotion.description}}
+    </p>
+  </mat-card-content>
+</mat-card>
+<mat-card *ngFor="let promotion of leaders" fxFlex=40>
+    <mat-card-header>
+      <div mat-card-avatar></div>
+      <mat-card-title>
+        <h3><b>{{promotion.name | uppercase}}</b></h3>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src={{promotion.image}} alt={{promotion.name}} height="400px">
+    <mat-card-content>
+      <p>{{promotion.description}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+
+</div>

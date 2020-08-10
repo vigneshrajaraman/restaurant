@@ -1,0 +1,55 @@
+
+<div  class="container"
+fxLayout="column"
+fxLayoutGap="10px" >
+<h1 ><b>Dishes</b></h1>
+<mat-divider></mat-divider>
+</div>
+<div class="container"
+fxLayout="row"
+fxLayout.sm="column"
+fxLayout.xs="column"
+fxLayoutAlign="center none" 
+fxLayoutGap="10px" 
+fxLayoutGap.xs="0" *ngFor="let dish of dishes">
+
+<div fxFlex="40"  >
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>{{dish.name | uppercase}}</mat-card-title>
+          <mat-card-subtitle>Dish</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="{{dish.image}}" alt="Photo of a Shiba Inu" height="300px">
+        <mat-card-content>
+        <p><b>{{dish.price| currency : "INR"}}</b></p>
+          <p>
+           {{dish.description}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button><mat-icon>thumb_up</mat-icon>LIKE</button>
+          <button mat-button><mat-icon>share</mat-icon>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+</div>
+
+<div fxFlex="40" >
+    <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>Comments</mat-card-title>
+          <mat-card-subtitle>For {{dish.name}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content style="margin: 20px;">
+            <ng-container  *ngFor="let comment of dish.comments">
+                <p>{{comment.comment}} </p>
+                <small>{{comment.rating}} Stars </small>
+                <small>--{{comment.author}} {{comment.date| date}} </small>
+                <br>
+            </ng-container>
+        
+        </mat-card-content>
+      
+      </mat-card>
+</div>
+
+</div>

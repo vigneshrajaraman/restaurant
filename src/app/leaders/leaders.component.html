@@ -1,0 +1,10 @@
+<div fxLayout="row" fxFlex>
+    <mat-list role="list">
+        <mat-list-item *ngFor="let leader of leaders">
+            <img matListAvatar [src]="leader.image" mat-card-avatar>
+            <h4 matLine>{{leader.name}} {{leader.abbr}}</h4>
+            <h4 matLine>{{leader.designation}}</h4>
+            <p matLine>{{leader.description  | truncatePipe:200}}</p>
+        </mat-list-item>
+    </mat-list>
+</div>
